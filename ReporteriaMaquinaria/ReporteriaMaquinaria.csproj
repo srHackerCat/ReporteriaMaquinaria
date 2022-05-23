@@ -250,6 +250,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="VisorRendimientos.aspx" />
     <Content Include="VisorUsoBomba.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -322,6 +323,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VisorRendimientos.aspx.cs">
+      <DependentUpon>VisorRendimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisorRendimientos.aspx.designer.cs">
+      <DependentUpon>VisorRendimientos.aspx</DependentUpon>
     </Compile>
     <Compile Include="VisorUsoBomba.aspx.cs">
       <DependentUpon>VisorUsoBomba.aspx</DependentUpon>

@@ -83,4 +83,3 @@ C:\RepositorioRebeca\ReporteriaMaquinaria\ReporteriaMaquinaria\obj\Debug\Reporte
 C:\RepositorioRebeca\ReporteriaMaquinaria\ReporteriaMaquinaria\obj\Debug\ReporteriaMaquinaria.pdb
 C:\RepositorioRebeca\ReporteriaMaquinaria\ReporteriaMaquinaria\bin\AxShockwaveFlashObjects.dll
 C:\RepositorioRebeca\ReporteriaMaquinaria\ReporteriaMaquinaria\bin\SAPBusinessObjects.WPF.ViewerShared.dll
-C:\RepositorioRebeca\ReporteriaMaquinaria\ReporteriaMaquinaria\obj\Debug\ReporteriaMaquinaria.csproj.AssemblyReference.cache
