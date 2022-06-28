@@ -16,14 +16,14 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class REPORTE_CONTROL_DIARIO : ReportClass {
+    public class RPT_CONTROL_DIA : ReportClass {
         
-        public REPORTE_CONTROL_DIARIO() {
+        public RPT_CONTROL_DIA() {
         }
         
         public override string ResourceName {
             get {
-                return "REPORTE_CONTROL_DIARIO.rpt";
+                return "RPT_CONTROL_DIA.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         public override string FullResourceName {
             get {
-                return "ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria.REPORTE_CONTROL_DIARIO.rpt";
+                return "ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria.RPT_CONTROL_DIA.rpt";
             }
             set {
                 // Do nothing
@@ -98,7 +98,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_FECHA_INICIO {
+        public CrystalDecisions.Shared.IParameterField Parameter_ID_OPERADOR {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,17 +106,33 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_FECHA_FIN {
+        public CrystalDecisions.Shared.IParameterField Parameter_FECHA_INICIO {
             get {
                 return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_FECHA_FIN {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_USUARIO {
+            get {
+                return this.DataDefinition.ParameterFields[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedREPORTE_CONTROL_DIARIO : Component, ICachedReport {
+    public class CachedRPT_CONTROL_DIA : Component, ICachedReport {
         
-        public CachedREPORTE_CONTROL_DIARIO() {
+        public CachedRPT_CONTROL_DIA() {
         }
         
         [Browsable(false)]
@@ -153,7 +169,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            REPORTE_CONTROL_DIARIO rpt = new REPORTE_CONTROL_DIARIO();
+            RPT_CONTROL_DIA rpt = new RPT_CONTROL_DIA();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -14,7 +14,7 @@
         <div>
         </div>
         <CR:CrystalReportViewer ID="CrystalReportViewer2" runat="server" AutoDataBind="true" />
-        <Report FileName="Reportes\ReporteR2Maquinaria\REPORTE_RENDIMIENTO.rpt"></Report>
+        <Report FileName="Reportes\ReporteR2Maquinaria\RPT_RENDIMIENTOS.rpt"></Report>
         <CR:CrystalReportSource ID="CrystalReportSource2" runat="server">
         </CR:CrystalReportSource>
     </form>

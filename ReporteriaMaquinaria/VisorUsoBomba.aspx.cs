@@ -20,21 +20,31 @@ namespace ReporteriaMaquinaria
         {
             ReportDocument reportDocument = new ReportDocument();
 
-            string rutareporte = Server.MapPath(@"Reportes\ReporteR2Maquinaria\REPORTE_USO_BOMBA.rpt");
+            string rutareporte = Server.MapPath(@"Reportes\ReporteR2Maquinaria\RPT_USO_BOMBA.rpt");
             this.CrystalReportViewer1.ParameterFieldInfo.Clear();
 
             reportDocument.Load(rutareporte);
-            ParameterValues pValue1 = new ParameterValues();
+
+            ParameterValues pValue = new ParameterValues();
             ParameterDiscreteValue pDiscreteValue = new ParameterDiscreteValue();
-            pDiscreteValue.Value = Request.QueryString["psfechadel"];
-            pValue1.Add(pDiscreteValue);
-            reportDocument.SetParameterValue("@FECHA_INICIO", pValue1);
+
+            pDiscreteValue.Value = Request.QueryString["psFechaIni"];
+            pValue.Add(pDiscreteValue);
+            reportDocument.SetParameterValue("@FECHA_INICIO", pValue);
 
             ParameterValues pValue2 = new ParameterValues();
             ParameterDiscreteValue pDiscreteValue2 = new ParameterDiscreteValue();
-            pDiscreteValue2.Value = Request.QueryString["psfechaal"];
+
+            pDiscreteValue2.Value = Request.QueryString["psFechaFin"];
             pValue2.Add(pDiscreteValue2);
             reportDocument.SetParameterValue("@FECHA_FIN", pValue2);
+
+            ParameterValues pValue3 = new ParameterValues();
+            ParameterDiscreteValue pDiscreteValue3 = new ParameterDiscreteValue();
+
+            pDiscreteValue3.Value = Request.QueryString["psProyecto"];
+            pValue3.Add(pDiscreteValue3);
+            reportDocument.SetParameterValue("@PROYECTO", pValue3);
 
             conexion.asignaDatosConeccionCrystal();
 
@@ -49,7 +59,7 @@ namespace ReporteriaMaquinaria
             try
             {
                 string filepath = "";
-                string fileName = "REPORTE_BOMBA" + Request.QueryString["REPORTE_BOMBA"];
+                string fileName = "REPORTE_BOMBA" + Request.QueryString["psFechaIni"] + Request.QueryString["psFechaFin"] + Request.QueryString["psProyecto"];
                 Console.Out.WriteLine(fileName);
                 Response.Clear();
                 filepath = Server.MapPath("~/Archivos_Exportados/" + fileName + ".pdf");

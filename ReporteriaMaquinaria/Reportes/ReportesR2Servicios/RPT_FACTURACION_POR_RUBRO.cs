@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
+namespace ReporteriaMaquinaria.Reportes.ReportesR2Servicios {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class REPORTE_RENDIMIENTOS : ReportClass {
+    public class RPT_FACTURACION_POR_RUBRO : ReportClass {
         
-        public REPORTE_RENDIMIENTOS() {
+        public RPT_FACTURACION_POR_RUBRO() {
         }
         
         public override string ResourceName {
             get {
-                return "REPORTE_RENDIMIENTOS.rpt";
+                return "RPT_FACTURACION_POR_RUBRO.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         public override string FullResourceName {
             get {
-                return "ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria.REPORTE_RENDIMIENTOS.rpt";
+                return "ReporteriaMaquinaria.Reportes.ReportesR2Servicios.RPT_FACTURACION_POR_RUBRO.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section PageFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,23 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MAQUINAID {
+        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection1 {
+            get {
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section PageFooterSection1 {
+            get {
+                return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_FECHA_INICIAL {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,7 +114,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_FECHA_INICIO {
+        public CrystalDecisions.Shared.IParameterField Parameter_FECHA_FINAL {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,7 +122,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_FECHA_FIN {
+        public CrystalDecisions.Shared.IParameterField Parameter_ID_COMPANIA {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -114,9 +130,9 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedREPORTE_RENDIMIENTOS : Component, ICachedReport {
+    public class CachedRPT_FACTURACION_POR_RUBRO : Component, ICachedReport {
         
-        public CachedREPORTE_RENDIMIENTOS() {
+        public CachedRPT_FACTURACION_POR_RUBRO() {
         }
         
         [Browsable(false)]
@@ -153,7 +169,7 @@ namespace ReporteriaMaquinaria.Reportes.ReporteR2Maquinaria {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            REPORTE_RENDIMIENTOS rpt = new REPORTE_RENDIMIENTOS();
+            RPT_FACTURACION_POR_RUBRO rpt = new RPT_FACTURACION_POR_RUBRO();
             rpt.Site = this.Site;
             return rpt;
         }

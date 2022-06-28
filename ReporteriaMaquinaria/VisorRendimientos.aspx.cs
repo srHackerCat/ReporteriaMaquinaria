@@ -20,29 +20,32 @@ namespace ReporteriaMaquinaria
         {
             ReportDocument reportDocument = new ReportDocument();
 
-            string rutareporte = Server.MapPath(@"Reportes\ReporteR2Maquinaria\REPORTE_RENDIMIENTOS.rpt");
+            string rutareporte = Server.MapPath(@"Reportes\ReporteR2Maquinaria\RPT_RENDIMIENTOS.rpt");
             this.CrystalReportViewer2.ParameterFieldInfo.Clear();
 
             reportDocument.Load(rutareporte);
 
-            ParameterValues pValue3 = new ParameterValues();
-            ParameterDiscreteValue pDiscreteValue3 = new ParameterDiscreteValue();
-            pDiscreteValue3.Value = Request.QueryString["MaquinaID"];
-            pValue3.Add(pDiscreteValue3);
-            reportDocument.SetParameterValue("@MAQUINAID", pValue3);
 
-            ParameterValues pValue1 = new ParameterValues();
+            ParameterValues pValue = new ParameterValues();
             ParameterDiscreteValue pDiscreteValue = new ParameterDiscreteValue();
-            pDiscreteValue.Value = Request.QueryString["psfechadel"];
-            pValue1.Add(pDiscreteValue);
-            reportDocument.SetParameterValue("@FECHA_INICIO", pValue1);
+
+            pDiscreteValue.Value = Request.QueryString["psMaquinaID"];
+            pValue.Add(pDiscreteValue);
+            reportDocument.SetParameterValue("@MAQUINAID", pValue);
 
             ParameterValues pValue2 = new ParameterValues();
             ParameterDiscreteValue pDiscreteValue2 = new ParameterDiscreteValue();
-            pDiscreteValue2.Value = Request.QueryString["psfechaal"];
-            pValue2.Add(pDiscreteValue2);
-            reportDocument.SetParameterValue("@FECHA_FIN", pValue2);
 
+            pDiscreteValue2.Value = Request.QueryString["psFechaIni"];
+            pValue2.Add(pDiscreteValue2);
+            reportDocument.SetParameterValue("@FECHA_INICIO", pValue2);
+
+            ParameterValues pValue3 = new ParameterValues();
+            ParameterDiscreteValue pDiscreteValue3 = new ParameterDiscreteValue();
+
+            pDiscreteValue3.Value = Request.QueryString["psFechaFin"];
+            pValue3.Add(pDiscreteValue3);
+            reportDocument.SetParameterValue("@FECHA_FIN", pValue3);
 
 
             conexion.asignaDatosConeccionCrystal();
@@ -58,7 +61,7 @@ namespace ReporteriaMaquinaria
             try
             {
                 string filepath = "";
-                string fileName = "REPORTE_RENDIMIENTO" + Request.QueryString["REPORTE_RENDIMIENTO"];
+                string fileName = "REPORTE_RENDIMIENTO" + Request.QueryString["psMaquinaID"] + Request.QueryString["psFechaIni"] + Request.QueryString["psFechaFin"];
                 Console.Out.WriteLine(fileName);
                 Response.Clear();
                 filepath = Server.MapPath("~/Archivos_Exportados/" + fileName + ".pdf");

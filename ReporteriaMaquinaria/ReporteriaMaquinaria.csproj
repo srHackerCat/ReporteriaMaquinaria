@@ -127,6 +127,9 @@
       <HintPath>..\packages\CrystalReports.Web.13.0.4001\lib\net40\CrystalDecisions.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>..\packages\CrystalReports.FlashControlV71.13.0.3501\lib\net20\FlashControlV71.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
     </Reference>
@@ -135,8 +138,8 @@
       <HintPath>..\packages\CrystalReports.WPF.ViewerShared.13.0.4001\lib\net40\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalReports.ShockwaveFlashObjects.13.0.4001\lib\net40\ShockwaveFlashObjects.dll</HintPath>
+    <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>..\packages\CrystalReports.FlashControlV71.13.0.3501\lib\net20\ShockwaveFlashObjects.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <Private>True</Private>
     </Reference>
@@ -250,6 +253,12 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="VisorCheckList.aspx" />
+    <Content Include="VisorConsumoGeneral.aspx" />
+    <Content Include="VisorControlDiario.aspx" />
+    <Content Include="VisorFacturacionXRubro.aspx" />
+    <Content Include="VisorHorometrosMaquinas.aspx" />
+    <Content Include="VisorRendimientoPorMaquina.aspx" />
     <Content Include="VisorRendimientos.aspx" />
     <Content Include="VisorUsoBomba.aspx" />
     <Content Include="Web.config" />
@@ -285,22 +294,52 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\ReporteR2Maquinaria\REPORTE_CONTROL_DIARIO.cs">
+    <Compile Include="Reportes\ReporteR2Maquinaria\RPT_CHECK_LIST.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>REPORTE_CONTROL_DIARIO.rpt</DependentUpon>
+      <DependentUpon>RPT_CHECK_LIST.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\ReporteR2Maquinaria\REPORTE_RENDIMIENTOS.cs">
+    <Compile Include="Reportes\ReporteR2Maquinaria\RPT_CONTROL_DIA.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>REPORTE_RENDIMIENTOS.rpt</DependentUpon>
+      <DependentUpon>RPT_CONTROL_DIA.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\ReporteR2Maquinaria\REPORTE_USO_BOMBA.cs">
+    <Compile Include="Reportes\ReporteR2Maquinaria\RPT_GRAFICA_POR_MAQUINA.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>REPORTE_USO_BOMBA.rpt</DependentUpon>
+      <DependentUpon>RPT_GRAFICA_POR_MAQUINA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteR2Maquinaria\RPT_HOROMETROS_DE_MAQUINARIA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_HOROMETROS_DE_MAQUINARIA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteR2Maquinaria\RPT_RENDIMIENTOS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_RENDIMIENTOS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteR2Maquinaria\RPT_USO_BOMBA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_USO_BOMBA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesR2Servicios\RPT_CONSUMO_DE_ARTICULO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_CONSUMO_DE_ARTICULO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesR2Servicios\RPT_FACTURACION_POR_RUBRO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_FACTURACION_POR_RUBRO.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Site.Master.cs">
@@ -323,6 +362,48 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VisorCheckList.aspx.cs">
+      <DependentUpon>VisorCheckList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisorCheckList.aspx.designer.cs">
+      <DependentUpon>VisorCheckList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisorConsumoGeneral.aspx.cs">
+      <DependentUpon>VisorConsumoGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisorConsumoGeneral.aspx.designer.cs">
+      <DependentUpon>VisorConsumoGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisorControlDiario.aspx.cs">
+      <DependentUpon>VisorControlDiario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisorControlDiario.aspx.designer.cs">
+      <DependentUpon>VisorControlDiario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisorFacturacionXRubro.aspx.cs">
+      <DependentUpon>VisorFacturacionXRubro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisorFacturacionXRubro.aspx.designer.cs">
+      <DependentUpon>VisorFacturacionXRubro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisorHorometrosMaquinas.aspx.cs">
+      <DependentUpon>VisorHorometrosMaquinas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisorHorometrosMaquinas.aspx.designer.cs">
+      <DependentUpon>VisorHorometrosMaquinas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisorRendimientoPorMaquina.aspx.cs">
+      <DependentUpon>VisorRendimientoPorMaquina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisorRendimientoPorMaquina.aspx.designer.cs">
+      <DependentUpon>VisorRendimientoPorMaquina.aspx</DependentUpon>
     </Compile>
     <Compile Include="VisorRendimientos.aspx.cs">
       <DependentUpon>VisorRendimientos.aspx</DependentUpon>
@@ -355,17 +436,37 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\ReporteR2Maquinaria\REPORTE_CONTROL_DIARIO.rpt">
+    <EmbeddedResource Include="Reportes\ReporteR2Maquinaria\RPT_CHECK_LIST.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>REPORTE_CONTROL_DIARIO.cs</LastGenOutput>
+      <LastGenOutput>RPT_CHECK_LIST.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteR2Maquinaria\REPORTE_RENDIMIENTOS.rpt">
+    <EmbeddedResource Include="Reportes\ReporteR2Maquinaria\RPT_CONTROL_DIA.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>REPORTE_RENDIMIENTOS.cs</LastGenOutput>
+      <LastGenOutput>RPT_CONTROL_DIA.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteR2Maquinaria\REPORTE_USO_BOMBA.rpt">
+    <EmbeddedResource Include="Reportes\ReporteR2Maquinaria\RPT_GRAFICA_POR_MAQUINA.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>REPORTE_USO_BOMBA.cs</LastGenOutput>
+      <LastGenOutput>RPT_GRAFICA_POR_MAQUINA.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteR2Maquinaria\RPT_HOROMETROS_DE_MAQUINARIA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_HOROMETROS_DE_MAQUINARIA.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteR2Maquinaria\RPT_RENDIMIENTOS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_RENDIMIENTOS.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteR2Maquinaria\RPT_USO_BOMBA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_USO_BOMBA.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesR2Servicios\RPT_CONSUMO_DE_ARTICULO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_CONSUMO_DE_ARTICULO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesR2Servicios\RPT_FACTURACION_POR_RUBRO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_FACTURACION_POR_RUBRO.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

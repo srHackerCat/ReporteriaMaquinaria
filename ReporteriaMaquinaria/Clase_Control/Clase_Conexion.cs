@@ -41,7 +41,7 @@ namespace ReporteriaMaquinaria.Clase_Control
         {
 
             this.servidor = "10.102.1.237";
-            this.base_de_datos = "R2_Maquinaria";
+            this.base_de_datos = "R2_Reportes";
             this.usuario = "sap";
             this.password = "12345678";
             //this.password = "12345";
